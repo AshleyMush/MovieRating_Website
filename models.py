@@ -1,8 +1,12 @@
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
 
+class Base(DeclarativeBase):
+    pass
 
-db = SQLAlchemy()
+db = SQLAlchemy(model_class=Base)
+
+
 
 class Movie(db.Model):
     __tablename__ = "movies"
